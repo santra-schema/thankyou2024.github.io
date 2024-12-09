@@ -56,34 +56,12 @@
         .balloon {
             position: absolute;
             bottom: -100px;
-            width: 70px;  /* Make the balloons more oval */
+            width: 70px;
             height: 100px;
-            border-radius: 50%;  /* Oval shape */
+            border-radius: 50%;
             background-color: rgba(255, 64, 129, 0.6); /* Transparent pink balloon */
             animation: floatBalloon 10s infinite ease-in-out;
             z-index: 5;
-        }
-        /* Balloon Rope Styling */
-        .rope {
-            position: absolute;
-            width: 3px;
-            height: 150px;  /* Height of the rope */
-            background-color: #2e2e2e;
-            bottom: -100px;
-            left: 50%;
-            margin-left: -1.5px; /* Center the rope */
-            z-index: 4;
-        }
-        @keyframes floatBalloon {
-            0% {
-                transform: translateX(0) translateY(0);
-            }
-            50% {
-                transform: translateX(30px) translateY(-500px);
-            }
-            100% {
-                transform: translateX(-30px) translateY(-1000px);
-            }
         }
         /* Confetti Animation */
         .confetti {
@@ -135,15 +113,20 @@
         <p>For your wonderful birthday wishes! You made my day extra special!</p>
     </div>
 
-    <!-- Balloon Animations with ropes -->
-    <div class="balloon" style="left: 30%; animation-duration: 12s;"></div>
-    <div class="rope" style="left: 30%;"></div>
-    
-    <div class="balloon" style="left: 60%; animation-duration: 14s;"></div>
-    <div class="rope" style="left: 60%;"></div>
-    
-    <div class="balloon" style="left: 10%; animation-duration: 18s;"></div>
-    <div class="rope" style="left: 10%;"></div>
+    <!-- Balloon Animations with Curved Ropes using SVG -->
+    <svg height="100%" width="100%" style="position: absolute; top: 0; left: 0;">
+        <!-- Rope for Balloon 1 -->
+        <path d="M 30% 100% C 35% 90%, 45% 70%, 30% 50%" stroke="#2e2e2e" stroke-width="3" fill="transparent"/>
+        <circle cx="30%" cy="50%" r="35" class="balloon" style="animation-duration: 12s;"></circle>
+
+        <!-- Rope for Balloon 2 -->
+        <path d="M 60% 100% C 65% 90%, 75% 70%, 60% 50%" stroke="#2e2e2e" stroke-width="3" fill="transparent"/>
+        <circle cx="60%" cy="50%" r="35" class="balloon" style="animation-duration: 14s;"></circle>
+
+        <!-- Rope for Balloon 3 -->
+        <path d="M 10% 100% C 15% 90%, 25% 70%, 10% 50%" stroke="#2e2e2e" stroke-width="3" fill="transparent"/>
+        <circle cx="10%" cy="50%" r="35" class="balloon" style="animation-duration: 18s;"></circle>
+    </svg>
 
     <!-- Confetti Animation -->
     <div class="confetti" id="confetti"></div>
