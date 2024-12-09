@@ -19,9 +19,11 @@
             height: 100vh;
             text-align: center;
             flex-direction: column;
+            animation: bgColorChange 10s infinite;
         }
         .content {
             z-index: 100;
+            padding: 20px;
         }
         h1 {
             font-size: 3em;
@@ -77,6 +79,7 @@
                 transform: translateY(600px) rotate(720deg);
             }
         }
+
         /* Dynamic Background Color Change */
         @keyframes bgColorChange {
             0% {
@@ -95,6 +98,7 @@
                 background-color: #f0f8ff;
             }
         }
+
         /* Image Styling */
         .image-container {
             position: absolute;
@@ -117,14 +121,10 @@
         <p>For your wonderful birthday wishes! You made my day extra special!</p>
         <br><br>
         <!-- Image -->
-    <div class="image-container">
-        <img src="test.png" alt="Thank You Image">
+        <div class="image-container">
+            <img src="test.png" alt="Thank You Image">
+        </div>
     </div>
-    </div>
-
-    
-
-
 
     <!-- Confetti Animation -->
     <div class="confetti" id="confetti"></div>
@@ -148,9 +148,6 @@
 
         // Start confetti animation
         createConfetti();
-
-        // Change background color every 10 seconds
-        document.body.style.animation = "bgColorChange 10s infinite";
 
         // Auto-scrolling effect
         function autoScroll() {
