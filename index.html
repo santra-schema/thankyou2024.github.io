@@ -18,6 +18,7 @@
             align-items: center;
             height: 100vh;
             text-align: center;
+            flex-direction: column;
         }
         .content {
             z-index: 100;
@@ -104,16 +105,34 @@
                 background-color: #f0f8ff;
             }
         }
+        /* Image Styling */
+        .image-container {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+        }
+        .image-container img {
+            max-width: 200px;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
 
+    <!-- Thank You Content -->
     <div class="content">
         <h1>THANK YOU ALL! 🎉</h1>
         <p>For your wonderful birthday wishes! You made my day extra special!</p>
     </div>
 
-    <!-- Balloon Animations without ropes -->
+    <!-- Image -->
+    <div class="image-container">
+        <img src="test.png" alt="Thank You Image">
+    </div>
+
+    <!-- Balloons without ropes -->
     <div class="balloon" style="left: 30%; animation-duration: 12s;"></div>
     <div class="balloon" style="left: 60%; animation-duration: 14s;"></div>
     <div class="balloon" style="left: 10%; animation-duration: 18s;"></div>
@@ -143,6 +162,13 @@
 
         // Change background color every 10 seconds
         document.body.style.animation = "bgColorChange 10s infinite";
+
+        // Auto-scrolling effect
+        function autoScroll() {
+            window.scrollBy(0, 1); // Scroll 1px down
+            setTimeout(autoScroll, 30); // Continue scrolling every 30ms
+        }
+        autoScroll(); // Start auto-scrolling
     </script>
 
 </body>
