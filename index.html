@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You Page</title>
+    <title>Thank You: from S Santra</title>
+    <link rel="icon" type="image/png" href="cake.png">
+
     <style>
         /* Set body styles */
         body {
@@ -75,55 +77,7 @@
             width: 500px; /* Adjust width as necessary */
         }
 
-        /* Create transparent balloons and cakes in background */
-        .balloon, .cake {
-            position: absolute;
-            opacity: 0.5;
-            z-index: 5;
-        }
-
-        .balloon {
-            width: 50px;
-            height: 80px;
-            background-color: rgba(255, 99, 71, 0.6);
-            border-radius: 50%;
-            animation: floatBalloons 6s infinite ease-in-out;
-        }
-
-        .cake {
-            width: 70px;
-            height: 50px;
-            background-color: rgba(244, 164, 66, 0.6);
-            border-radius: 10px;
-            animation: floatCakes 8s infinite ease-in-out;
-        }
-
-        /* Balloon animation */
-        @keyframes floatBalloons {
-            0% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-100px);
-            }
-            100% {
-                transform: translateY(0);
-            }
-        }
-
-        /* Cake animation */
-        @keyframes floatCakes {
-            0% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(80px);
-            }
-            100% {
-                transform: translateY(0);
-            }
-        }
-
+        
         /* Mobile styles */
         @media (max-width: 768px) {
             .heading {
@@ -146,15 +100,7 @@
                 top: 250px; /* Adjust as necessary */
             }
 
-            .balloon {
-                width: 40px;
-                height: 60px;
-            }
-
-            .cake {
-                width: 60px;
-                height: 45px;
-            }
+            
         }
 
         /* Tablet styles */
@@ -175,15 +121,7 @@
                 width: 300px;
             }
 
-            .balloon {
-                width: 45px;
-                height: 70px;
-            }
-
-            .cake {
-                width: 65px;
-                height: 47px;
-            }
+            
         }
     </style>
 </head>
@@ -191,6 +129,7 @@
 
     <!-- Heading and Sub-heading Text -->
     <div class="heading">THANK YOU ALL</div>
+<br><br><br>
     <div class="sub-heading">of my Freedom Colleagues! 🎉</div>
 
     <!-- Paragraph -->
@@ -199,13 +138,6 @@
     <!-- Fixed Image -->
     <img src="test.png" alt="Fixed Image" class="floating-image">
 
-    <!-- Transparent Balloons and Cakes -->
-    <div class="balloon" style="top: 100px; left: 30px;"></div>
-    <div class="balloon" style="top: 250px; left: 200px;"></div>
-    <div class="balloon" style="top: 500px; left: 400px;"></div>
-
-    <div class="cake" style="top: 200px; left: 100px;"></div>
-    <div class="cake" style="top: 400px; left: 300px;"></div>
 
 </body>
 </html>
