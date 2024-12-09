@@ -33,60 +33,46 @@
         }
 
         /* Style for the fixed text */
-.heading {
-    top: 10px;
-    font-size: 36px;
-    text-align: center;
-    color: #2c3e50;
-    z-index: 10;
-}
-
-.sub-heading {
-    top: 70px;
-    font-size: 24px;
-    text-align: center;
-    color: #e74c3c;
-    z-index: 10;
-}
-
-.paragraph {
-    top: 120px;
-    font-size: 20px;
-    text-align: center;
-    color: #34495e;
-    z-index: 10;
-}
-
-
-        /* Floating image animation */
-        .floating-image {
-            position: absolute;
-            top: 150px;
-            left: 30%;
-            animation: floatImage 10s infinite;
+        .heading {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 36px;
+            text-align: center;
+            color: #2c3e50;
+            z-index: 10;
         }
 
-        @keyframes floatImage {
-            0% {
-                top: 150px;
-                left: 50%;
-            }
-            25% {
-                top: 300px;
-                left: 100px;
-            }
-            50% {
-                top: 450px;
-                left: 50%;
-            }
-            75% {
-                top: 300px;
-                left: 500px;
-            }
-            100% {
-                top: 150px;
-                left: 50%;
-            }
+        .sub-heading {
+            position: fixed;
+            top: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            text-align: center;
+            color: #e74c3c;
+            z-index: 10;
+        }
+
+        .paragraph {
+            position: fixed;
+            top: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 20px;
+            text-align: center;
+            color: #34495e;
+            z-index: 10;
+        }
+
+        /* Fixed image styling */
+        .floating-image {
+            position: absolute;
+            top: 200px; /* Adjust as needed */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 500px; /* Adjust width as necessary */
         }
 
         /* Create transparent balloons and cakes in background */
@@ -156,20 +142,18 @@
             }
 
             .floating-image {
-                width: 500px;
-                top: 180px;
+                width: 300px;
+                top: 250px; /* Adjust as necessary */
             }
 
             .balloon {
                 width: 40px;
                 height: 60px;
-                animation: floatBalloons 6s infinite ease-in-out;
             }
 
             .cake {
                 width: 60px;
                 height: 45px;
-                animation: floatCakes 8s infinite ease-in-out;
             }
         }
 
@@ -188,7 +172,7 @@
             }
 
             .floating-image {
-                width: 500px;
+                width: 400px;
             }
 
             .balloon {
@@ -212,8 +196,8 @@
     <!-- Paragraph -->
     <div class="paragraph">For your wonderful birthday wishes!</div>
 
-    <!-- Floating Image -->
-    <img src="test.png" alt="Floating Image" class="floating-image">
+    <!-- Fixed Image -->
+    <img src="test.png" alt="Fixed Image" class="floating-image">
 
     <!-- Transparent Balloons and Cakes -->
     <div class="balloon" style="top: 100px; left: 30px;"></div>
