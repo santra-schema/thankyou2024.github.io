@@ -7,54 +7,66 @@
     <style>
         /* Global Styling */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            text-align: center;
             margin: 0;
             padding: 0;
+            background: #f0f8ff;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            overflow: hidden;
         }
         h1 {
             font-size: 3em;
-            color: #4caf50;
-            animation: fadeIn 3s ease-in-out;
+            font-weight: bold;
+            color: #ff5722;
+            margin-top: 100px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s ease-out forwards;
+            transform: translateY(-50px);
+            opacity: 0;
         }
         p {
             font-size: 1.5em;
-            color: #333;
+            color: #444;
+            opacity: 0;
             margin-top: 20px;
-            animation: slideUp 2s ease-out;
+            animation: slideIn 2s ease-out forwards;
         }
-        /* Animations */
+        /* Text Animation */
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
             to {
                 opacity: 1;
+                transform: translateY(0);
             }
         }
-        @keyframes slideUp {
-            from {
-                transform: translateY(30px);
-                opacity: 0;
-            }
+        @keyframes slideIn {
             to {
-                transform: translateY(0);
                 opacity: 1;
-            }
-        }
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
                 transform: translateY(0);
             }
-            40% {
-                transform: translateY(-10px);
+        }
+        /* Balloon Animations */
+        .balloon {
+            position: absolute;
+            bottom: -100px;
+            width: 50px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #ff4081;
+            animation: floatBalloon 10s infinite ease-in-out;
+            z-index: 5;
+        }
+        @keyframes floatBalloon {
+            0% {
+                transform: translateX(0) translateY(0);
             }
-            60% {
-                transform: translateY(-5px);
+            50% {
+                transform: translateX(30px) translateY(-500px);
+            }
+            100% {
+                transform: translateX(-30px) translateY(-1000px);
             }
         }
-        /* Confetti effect */
+        /* Confetti Animation */
         .confetti {
             position: absolute;
             top: 0;
@@ -67,9 +79,9 @@
             background-color: #ff5722;
             width: 10px;
             height: 10px;
-            animation: fall 3s linear infinite;
+            animation: confettiFall 3s linear infinite;
         }
-        @keyframes fall {
+        @keyframes confettiFall {
             0% {
                 transform: translateY(0) rotate(0deg);
             }
@@ -77,21 +89,41 @@
                 transform: translateY(600px) rotate(720deg);
             }
         }
+        /* Dynamic Background Color Change */
+        @keyframes bgColorChange {
+            0% {
+                background-color: #f0f8ff;
+            }
+            25% {
+                background-color: #ffeb3b;
+            }
+            50% {
+                background-color: #ff5722;
+            }
+            75% {
+                background-color: #4caf50;
+            }
+            100% {
+                background-color: #f0f8ff;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <h1 class="bounce">THANK YOU ALL! 🎉</h1>
+    <h1>THANK YOU ALL! 🎉</h1>
     <p>For your wonderful birthday wishes! You made my day extra special!</p>
+
+    <!-- Balloon Animations -->
+    <div class="balloon" style="left: 30%; animation-duration: 12s;"></div>
+    <div class="balloon" style="left: 60%; animation-duration: 14s;"></div>
+    <div class="balloon" style="left: 10%; animation-duration: 18s;"></div>
 
     <!-- Confetti Animation -->
     <div class="confetti" id="confetti"></div>
 
     <script>
-        // Bouncing animation for the heading
-        document.querySelector("h1").classList.add("bounce");
-
-        // Generate confetti effect
+        // Create confetti effect
         function createConfetti() {
             for (let i = 0; i < 50; i++) {
                 const confettiPiece = document.createElement('span');
@@ -106,8 +138,12 @@
                 document.getElementById("confetti").appendChild(confettiPiece);
             }
         }
-        
-        createConfetti(); // Trigger the confetti effect
+
+        // Start confetti animation
+        createConfetti();
+
+        // Change background color every 10 seconds
+        document.body.style.animation = "bgColorChange 10s infinite";
     </script>
 
 </body>
