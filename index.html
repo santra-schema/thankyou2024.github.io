@@ -56,12 +56,23 @@
         .balloon {
             position: absolute;
             bottom: -100px;
-            width: 50px;
-            height: 80px;
-            border-radius: 50%;
+            width: 70px;  /* Make the balloons more oval */
+            height: 100px;
+            border-radius: 50%;  /* Oval shape */
             background-color: rgba(255, 64, 129, 0.6); /* Transparent pink balloon */
             animation: floatBalloon 10s infinite ease-in-out;
             z-index: 5;
+        }
+        /* Balloon Rope Styling */
+        .rope {
+            position: absolute;
+            width: 3px;
+            height: 150px;  /* Height of the rope */
+            background-color: #2e2e2e;
+            bottom: -100px;
+            left: 50%;
+            margin-left: -1.5px; /* Center the rope */
+            z-index: 4;
         }
         @keyframes floatBalloon {
             0% {
@@ -124,10 +135,15 @@
         <p>For your wonderful birthday wishes! You made my day extra special!</p>
     </div>
 
-    <!-- Balloon Animations -->
+    <!-- Balloon Animations with ropes -->
     <div class="balloon" style="left: 30%; animation-duration: 12s;"></div>
+    <div class="rope" style="left: 30%;"></div>
+    
     <div class="balloon" style="left: 60%; animation-duration: 14s;"></div>
+    <div class="rope" style="left: 60%;"></div>
+    
     <div class="balloon" style="left: 10%; animation-duration: 18s;"></div>
+    <div class="rope" style="left: 10%;"></div>
 
     <!-- Confetti Animation -->
     <div class="confetti" id="confetti"></div>
