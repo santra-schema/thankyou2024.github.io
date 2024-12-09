@@ -146,6 +146,70 @@
                 transform: translateY(0);
             }
         }
+
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            .heading {
+                font-size: 28px;
+                top: 5px;
+            }
+
+            .sub-heading {
+                font-size: 20px;
+                top: 50px;
+            }
+
+            .paragraph {
+                font-size: 16px;
+                top: 100px;
+            }
+
+            .floating-image {
+                width: 80px;
+                top: 200px;
+            }
+
+            .balloon {
+                width: 40px;
+                height: 60px;
+                animation: floatBalloons 6s infinite ease-in-out;
+            }
+
+            .cake {
+                width: 60px;
+                height: 45px;
+                animation: floatCakes 8s infinite ease-in-out;
+            }
+        }
+
+        /* Tablet styles */
+        @media (max-width: 1024px) {
+            .heading {
+                font-size: 32px;
+            }
+
+            .sub-heading {
+                font-size: 22px;
+            }
+
+            .paragraph {
+                font-size: 18px;
+            }
+
+            .floating-image {
+                width: 90px;
+            }
+
+            .balloon {
+                width: 45px;
+                height: 70px;
+            }
+
+            .cake {
+                width: 65px;
+                height: 47px;
+            }
+        }
     </style>
 </head>
 <body>
