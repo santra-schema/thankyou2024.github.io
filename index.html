@@ -21,10 +21,14 @@
             flex-direction: column;
             animation: bgColorChange 10s infinite;
         }
+
         .content {
             z-index: 100;
             padding: 20px;
+            position: relative;
+            top: 10%;
         }
+
         h1 {
             font-size: 3em;
             font-weight: bold;
@@ -35,6 +39,7 @@
             transform: translateY(-50px);
             opacity: 0;
         }
+
         p {
             font-size: 1.5em;
             color: #444;
@@ -42,6 +47,7 @@
             margin-top: 20px;
             animation: slideIn 2s ease-out forwards;
         }
+
         /* Text Animations */
         @keyframes fadeIn {
             to {
@@ -49,13 +55,14 @@
                 transform: translateY(0);
             }
         }
+
         @keyframes slideIn {
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
+
         /* Confetti Animation */
         .confetti {
             position: absolute;
@@ -64,6 +71,7 @@
             pointer-events: none;
             z-index: 10;
         }
+
         .confetti span {
             position: absolute;
             background-color: #ff5722;
@@ -71,6 +79,7 @@
             height: 10px;
             animation: confettiFall 3s linear infinite;
         }
+
         @keyframes confettiFall {
             0% {
                 transform: translateY(0) rotate(0deg);
@@ -102,15 +111,18 @@
         /* Image Styling */
         .image-container {
             position: absolute;
-            top: 20%;
+            top: 50%;  /* Positioned below the text */
             left: 50%;
-            transform: translateX(-50%);
+            transform: translate(-50%, -50%);
             z-index: 100;
+            margin-top: 20px; /* Ensures there is space between text and image */
         }
+
         .image-container img {
             max-width: 200px;
             border-radius: 10px;
         }
+
     </style>
 </head>
 <body>
@@ -119,11 +131,11 @@
     <div class="content">
         <h1>THANK YOU ALL! 🎉</h1>
         <p>For your wonderful birthday wishes! You made my day extra special!</p>
-        <br><br>
-        <!-- Image -->
-        <div class="image-container">
-            <img src="test.png" alt="Thank You Image">
-        </div>
+    </div>
+
+    <!-- Image Below the Text -->
+    <div class="image-container">
+        <img src="test.png" alt="Thank You Image">
     </div>
 
     <!-- Confetti Animation -->
